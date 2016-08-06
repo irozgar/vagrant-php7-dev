@@ -1,0 +1,10 @@
+---
+repository:
+    url: deb http://tedeco.fi.upm.es/mirror/mariadb/repo/10.1/debian jessie main
+    keyserver: keyserver.ubuntu.com
+    id: "0xcbcb082a1bb943db"
+
+root_password: 1234
+
+databases:
+    - { name: app, user: app_user, password: 1234 }

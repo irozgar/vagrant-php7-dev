@@ -1,0 +1,3 @@
+---
+template: default_site.j2
+root: /vagrant

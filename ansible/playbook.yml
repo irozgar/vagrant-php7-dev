@@ -1,0 +1,18 @@
+---
+ - hosts: all
+   sudo: true
+   vars_files:
+     - vars/all.yml
+   roles:
+     - base
+     - nginx
+     - php
+     - mariadb
+     - { role: website, template: symfony_site.j2, domain: application.dev, root: /vagrant/web }
+  # Install nginx
+  # Add PHP 7 repository
+  # Install PHP with xdebug
+  # Configure PHP with nginx
+  # Add mariadb repository
+  # Install mariadb
+  # Install blackfire.io

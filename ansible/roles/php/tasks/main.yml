@@ -1,0 +1,15 @@
+---
+ - name: Add PHP 7 repository
+   apt_repository: repo='{{ repository.url }}' state=present
+
+ - name: Add repository key
+   apt_key: url={{ repository.key_url }} state=present
+   when: repository.key_url
+
+ - name: Insall PHP 7
+   apt: pkg={{ item }} state=latest update_cache=true
+   sudo: true
+   with_items:
+     - "{{ packages }}"
+   notify:
+     - Start php-fpm

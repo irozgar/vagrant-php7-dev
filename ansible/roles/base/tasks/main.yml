@@ -1,0 +1,22 @@
+---
+ - name: Update apt
+   apt: update_cache=yes
+   sudo: true
+
+ - name: Install packager
+   apt: pkg={{ item }} state=latest
+   with_items: server.packages
+   sudo: true
+   when: server.packages is defined
+
+ - name: Configure timezone 1
+   template: src=timezone.tpl dest=/etc/timezone
+   sudo: true
+
+ - name: Configure timezone 2
+   file: src=/usr/share/zoneinfo/{{ server.timezone }} dest=/etc/localtime state=link force=yes backup=yes
+   sudo: true
+
+ - name: Set system language
+   shell: locale-gen {{ server.locale }}
+   sudo: true

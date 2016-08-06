@@ -1,0 +1,5 @@
+---
+server:
+  packages: [ vim, htop ]
+  timezone: UTC
+  locale: es_ES.UTF-8

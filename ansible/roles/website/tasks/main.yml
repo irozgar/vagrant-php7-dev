@@ -1,0 +1,11 @@
+---
+ - name: Add sites config
+   template: src={{ template }} dest=/etc/nginx/sites-available/{{ domain }} owner=root group=root
+   sudo: true
+
+
+ - name: Enable sites
+   file: src=/etc/nginx/sites-available/{{ domain }} dest=/etc/nginx/sites-enabled/{{ domain }} state=link
+   sudo: true
+   notify:
+     - Reload nginx

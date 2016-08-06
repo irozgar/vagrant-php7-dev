@@ -1,0 +1,17 @@
+---
+repository:
+    url: deb http://packages.dotdeb.org jessie all
+    key_url: https://www.dotdeb.org/dotdeb.gpg
+
+packages:
+  - php7.0-fpm
+  - php7.0-cli
+  - php7.0-intl
+  - php7.0-mysql
+  - php7.0-opcache
+  - php7.0-zip
+  - php7.0-xml
+
+xdebug:
+    enable: true
+    package: php7.0-xdebug
