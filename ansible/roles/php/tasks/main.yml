@@ -6,7 +6,7 @@
    apt_key: url={{ repository.key_url }} state=present
    when: repository.key_url
 
- - name: Insall PHP 7
+ - name: Install PHP 7
    apt: pkg={{ item }} state=latest update_cache=true
    sudo: true
    with_items:
