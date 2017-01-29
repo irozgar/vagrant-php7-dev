@@ -15,5 +15,5 @@ packages:
   - php7.1-xml
 
 xdebug:
-    enable: false
-    package: php7.0-xdebug
+    enable: true
+    package: php-xdebug
