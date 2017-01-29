@@ -1,0 +1,13 @@
+---
+ - name: Install curl
+   apt: pkg=curl state=latest update_cache=true
+   
+ - name: Get composer
+   shell: curl -Ss http://getcomposer.org/installer | php
+#   shell: curl -Ss http://getcomposer.org/composer.phar -o composer.phar
+
+ - name: Move composer to installation path
+   copy: src=composer.phar dest=/usr/local/bin/composer mode=0755
+
+ - name: Clean downloaded files
+   file: path=composer.phar state=absent

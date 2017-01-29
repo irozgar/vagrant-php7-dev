@@ -9,10 +9,7 @@
      - php
      - mariadb
      - { role: website, template: symfony_site.j2, domain: application.dev, root: /vagrant/web }
-  # Install nginx
-  # Add PHP 7 repository
+     - { role: packages_manager, composer.enable: true }
+  # Install npm
   # Install PHP with xdebug
-  # Configure PHP with nginx
-  # Add mariadb repository
-  # Install mariadb
   # Install blackfire.io

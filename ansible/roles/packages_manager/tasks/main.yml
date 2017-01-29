@@ -1,0 +1,2 @@
+ - include: composer.yml
+   when: composer.enable
