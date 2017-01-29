@@ -1,5 +1,5 @@
 ---
 server:
-  packages: [ vim, htop ]
+  packages: [ vim, htop, apt-transport-https, ca-certificates ]
   timezone: UTC
   locale: es_ES.UTF-8
