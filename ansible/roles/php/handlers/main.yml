@@ -1,6 +1,6 @@
 ---
  - name: Start php-fpm
-   service: name=php{{ version }}-fpm state=started
+   service: name=php{{ php_version }}-fpm state=started
 
  - name: Restart php-fpm
-   service: name=php{{ version }}-fpm state=restarted
+   service: name=php{{ php_version }}-fpm state=restarted

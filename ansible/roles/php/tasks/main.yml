@@ -16,7 +16,7 @@
      - Start php-fpm
 
  - name: Set timezone for PHP
-   lineinfile: dest=/etc/php/{{ version }}/{{ item }}/php.ini
+   lineinfile: dest=/etc/php/{{ php_version }}/{{ item }}/php.ini
                regexp=';?date.timezone ='
                line='date.timezone = {{ server.timezone }}'
                state=present
