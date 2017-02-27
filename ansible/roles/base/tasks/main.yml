@@ -5,7 +5,7 @@
 
  - name: Install packager
    apt: pkg={{ item }} state=latest
-   with_items: server.packages
+   with_items: '{{ server.packages }}'
    sudo: true
    when: server.packages is defined
 
